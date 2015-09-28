@@ -1,0 +1,42 @@
+body {
+	position: relative;
+	overflow-y: hidden;
+}
+.player {
+	position:fixed;
+	bottom:0;
+	width:100%;
+	background: linear-gradient(rgba(255,255,255,0.7), white);
+	/*display: none;*/
+}
+.time-elapsed {
+	width:50px;
+}
+.time-remaining {
+	width:50px;
+	text-align:right;
+}
+.page-content {
+	margin-bottom: 70px;
+	height: 70vh;
+	overflow-y: auto;
+}
+.search-bar {
+	height: 60px;
+	overflow-y: hidden;
+}
+.sidebar {
+	height: 100%;
+	overflow: hidden;
+	float: left;
+	width: 20%;
+	display: inline-block;
+}
+.main {
+	float: left;
+	width: 80%;
+	display: inline-block;
+}
+.masonry-content {
+	overflow-y: hidden;
+}

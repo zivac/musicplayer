@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body ng-app="musicApp">
+
+    <div class="sidebar">
+        <div class="md-padding">
+            queue
+        </div>
+    </div>
+    <div class="main">
+        <div class="menu">
+            <md-tabs>
+                <md-tab><md-tab-label>artists</md-tab-label></md-tab>
+                <md-tab><md-tab-label>albums</md-tab-label></md-tab>
+                <md-tab><md-tab-label>songs</md-tab-label></md-tab>
+                <md-tab><md-tab-label>playlists</md-tab-label></md-tab>
+            </md-tabs>
+        </div>
+
+        <div class="content">
+            <md-content class="md-padding">
+                <div flex ng-view></div>
+            </md-content>
+        </div>
+    </div>
+
+    <div class="player" ng-controller="MenuCtrl">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button"><md-icon md-font-library="material-icons">skip_previous</md-icon></md-button>
+            <md-button class="md-fab md-primary"><md-icon md-font-library="material-icons">play_arrow</md-icon></md-button>
+            <md-button class="md-icon-button"><md-icon md-font-library="material-icons">skip_next</md-icon></md-button>
+            <div class="time-elapsed md-caption">12:11</div>
+            <md-slider flex min="0" max="100" aria-label="progress"></md-slider>
+            <div class="time-remaining md-caption">15:33</div>
+            <md-button aria-label="mute" class="md-icon-button">
+                <md-icon md-font-library="material-icons">volume_up</md-icon>
+            </md-button>
+            <md-slider aria-label="volume" flex="10"></md-slider>
+            <md-fab-speed-dial md-direction="up" class="md-fling" md-open="demo.isOpen"
+                         ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false">
+                <md-fab-trigger>
+                    <md-button aria-label="menu" class="md-icon-button" ng-click="console.log('test')">
+                        <md-icon md-font-library="material-icons">repeat</md-icon>
+                    </md-button>
+                </md-fab-trigger>
+                <md-fab-actions style="position: absolute;bottom:50px;right:0;">
+                    <md-button aria-label="repeat_once" class="md-fab md-raised md-mini md-primary">
+                        <md-tooltip md-direction="left">play once</md-tooltip>
+                        <md-icon md-font-library="material-icons">repeat_one</md-icon>
+                    </md-button>
+                    <md-button aria-label="repeat" class="md-fab md-raised md-mini md-primary">
+                        <md-tooltip md-direction="left">repeat</md-tooltip>
+                        <md-icon md-font-library="material-icons">repeat</md-icon>
+                    </md-button>
+                    <md-button aria-label="shuffle" class="md-fab md-raised md-mini md-primary">
+                        <md-tooltip md-direction="left">shuffle</md-tooltip>
+                        <md-icon md-font-library="material-icons">shuffle</md-icon>
+                    </md-button>
+                    <md-button aria-label="radio" class="md-fab md-raised md-mini md-primary">
+                        <md-tooltip md-direction="left">radio mode</md-tooltip>
+                        <md-icon md-font-library="material-icons">radio</md-icon>
+                    </md-button>
+                </md-fab-actions>
+            </md-fab-speed-dial>
+        </div>
+    </div>
+ 
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script src="bower_components/jquery.bridget.js"></script>
+    <script src="bower_components/get-style-property.js"></script>
+    <script src="bower_components/get-size.js"></script>
+    <script src="bower_components/EventEmitter.js"></script>
+    <script src="bower_components/eventie.js"></script>
+    <script src="bower_components/doc-ready.js"></script>
+    <script src="bower_components/matches-selector.js"></script>
+    <script src="bower_components/utils.js"></script>
+    <script src="bower_components/item.js"></script>
+    <script src="bower_components/outlayer.js"></script>
+    <script src="bower_components/masonry.js"></script>
+    <script src="bower_components/imagesloaded.js"></script>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script> 
+    <script src="node_modules/angular-animate/angular-animate.js"></script> 
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-masonry/angular-masonry.min.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+ 
+</body>
+</html>
